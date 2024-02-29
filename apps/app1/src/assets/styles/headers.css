@@ -1,0 +1,5 @@
+@layer base {
+    .title {
+        @apply text-4xl;
+    }
+}

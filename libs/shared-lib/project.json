@@ -1,0 +1,26 @@
+{
+  "name": "shared-lib",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/shared-lib/src",
+  "prefix": "angular-monorepo",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/shared-lib/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/shared-lib/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/shared-lib/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    }
+  }
+}
